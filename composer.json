@@ -1,0 +1,18 @@
+{
+	"name": "AK-Kommunikationsdesign/encom_monstercards",
+	"version": "1.0.0",
+	"description": "Encom Monster Cards",
+	"type": "kirby-plugin",
+	"keywords": [
+		"kirby",
+		"kirby-plugin"
+	],
+	"license": "proprietary",
+	"extra": {
+		"installer-name": "site-monstercards"
+	},
+	"require": {
+		"getkirby/composer-installer": "^1.2",
+		"kirbydesk/kirby-pagewizard": "^1.0"
+	}
+}
