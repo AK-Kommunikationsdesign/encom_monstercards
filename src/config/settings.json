@@ -1,0 +1,41 @@
+{
+  "tabs": {
+    "layout": true,
+    "style": true,
+    "grid": true,
+    "settings": true
+  },
+	"fields": {
+    "content": {
+      "tagline": false,
+      "heading": false,
+      "editor": false,
+      "item-tagline": {
+        "align": [ "left", "center", "right" ]
+      },
+      "item-heading": {
+        "align": [ "left", "center", "right" ],
+        "level": false,
+        "sizes": false
+      },
+      "item-editor": {
+        "mode": [ "textarea"],
+        "align": [ "left", "center", "right" ],
+        "sizes": false
+      },
+			"item-radius": false
+    },
+    "layout": {
+      "padding": true,
+      "radius": true
+    },
+    "style": {
+      "theme": true
+    },
+    "settings": {
+      "fragment": true,
+      "block-size": true,
+      "margin": true
+    }
+  }
+}
