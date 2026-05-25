@@ -33,12 +33,31 @@ section[data-block="monstercards"] {
 		padding-top: 50px;
 
 		[data-block="item"] {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 1.5rem;
+			overflow: hidden;
+
+			/* Stick the CTA to the bottom of the item so all links / buttons
+			   in a row line up on the same baseline (grid stretches items). */
+			[data-field="content"] {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+
+				[data-field="cta"] {
+					margin-top: auto;
+					padding-top: 1.5rem;
+				}
+			}
+			/*
 			display: block;
 			margin-bottom: 100px;
 
 			&:last-child {
 				margin-bottom: 0;
 			}
+			*/
 			border-top-left-radius: 50px;
 			border-top-right-radius: 50px;
 			border-bottom-left-radius: 2rem;

@@ -65,6 +65,9 @@
 									<div class="pwText" v-if="parseEditorText(item.content.description)">{{ parseEditorText(item.content.description) }}</div>
 									<div class="placeholder" v-else>{{ $t('kirbyblock-monstercards.item.description.placeholder') }}</div>
 								</div>
+								<div v-if="hasItemLink(item)" class="pwCta">
+									<span>{{ ctaText(item) }}</span>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -125,6 +128,14 @@ export default {
 			} catch(e) {
 				return raw;
 			}
+		},
+		hasItemLink(item) {
+			return Boolean(item.content && item.content.linkinternal);
+		},
+		ctaText(item) {
+			const lt = item.content && item.content.linktext;
+			if (lt && String(lt).trim() !== '') return lt;
+			return this.$t('kirbyblock-monstercards.item.cta') || 'Read more';
 		}
 	},
 	computed: {
@@ -149,3 +160,15 @@ export default {
 	}
 }
 </script>
+
+<style scoped>
+.pwCta {
+	margin-top: 0.5em;
+	display: inline-flex;
+	padding: 0.4em 1em;
+	border-radius: 999px;
+	background: rgba(0, 0, 0, 0.08);
+	font-size: var(--text-sm);
+	font-weight: 500;
+}
+</style>

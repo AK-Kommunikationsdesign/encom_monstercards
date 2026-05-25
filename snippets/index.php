@@ -169,9 +169,20 @@ if ($items->count() > 0):
 					endif;
 				endif;
 
+
 				// Button (visual only — item itself is the link)
 				if (!empty($url)):
-					echo '<div data-field="buttons"><div data-field="button"><span>'.t('site.readmore').'</span></div></div>'."\n";
+
+
+					$linkText  = $item->linkText()->isNotEmpty()
+						? $item->linkText()->value()
+						: t('kirbyblock-cardlets.item.cta', 'Read more');
+					$linkAlign = $item->linkAlign()->or('left')->value();
+
+					echo '<span data-field="cta" data-align="'.$linkAlign.'">';
+					echo '<div data-field="buttons"><div data-field="button"><span>'.$linkText.'</span></div></div>'."\n";
+					echo '</span>'."\n";
+
 				endif;
 
 				echo '</div>'."\n"; // End Content
